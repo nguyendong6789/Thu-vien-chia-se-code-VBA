@@ -1,0 +1,16 @@
+Function chisoBMI(cannang, chieucao)
+    chisoBMI = Round(cannang / chieucao ^ 2, 1)
+    If chisoBMI < 18.5 Then
+        chisoBMI = chisoBMI & " - Om"
+        Application.Caller.Font.ColorIndex = 4
+    ElseIf chisoBMI >= 18.5 And chisoBMI < 24.9 Then
+        chisoBMI = chisoBMI & " - Vua"
+        Application.Caller.Font.ColorIndex = 5
+    ElseIf chisoBMI >= 24.9 And chisoBMI < 29.9 Then
+        chisoBMI = chisoBMI & " - Map"
+        Application.Caller.Font.ColorIndex = 45
+    Else
+        chisoBMI = chisoBMI & " - Beo phi"
+        Application.Caller.Font.ColorIndex = 3
+    End If
+End Function
