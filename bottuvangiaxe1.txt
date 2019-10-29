@@ -1,0 +1,29 @@
+Sub BotGiaXe()
+    tenxe = InputBox("Ban mua xe gi?", "Bot", "Camry")
+    quocgia = InputBox("Ban mua o nuoc nao? 1. My - 2. Duc - 3. Nhat - 4. Asean", "Bot", "Nhat")
+    xilanh = InputBox("Dung tich xi lanh?", "Bot", "2.5")
+    gianhap = InputBox("Gia", "Bot", "35000")
+    'Tinh thue nhap khau
+    Select Case quocgia
+        Case Is = "Asean": thueNK = 0.3 * gianhap
+        Case Else: thueNK = 0.7 * gianhap
+    End Select
+    'Tinh thue tieu thu dac biet
+    Select Case xilanh
+        Case Is <= 1.5: thueTTDB = 0.35 * (gianhap + thueNK)
+        Case Is < 2: thueTTDB = 0.4 * (gianhap + thueNK)
+        Case Is < 2.5: thueTTDB = 0.5 * (gianhap + thueNK)
+        Case Is < 3: thueTTDB = 0.6 * (gianhap + thueNK)
+        Case Is < 4: thueTTDB = 0.9 * (gianhap + thueNK)
+        Case Is < 5: thueTTDB = 1.1 * (gianhap + thueNK)
+        Case Is < 6: thueTTDB = 1.3 * (gianhap + thueNK)
+        Case Else: thueTTDB = 1.5 * (gianhap + thueNK)
+    End Select
+    'Thue gia tri gia tang (VAT)
+    thueVAT = (gianhap + thueNK + thueTTDB) * 0.1
+    gianhapCang = gianhap + thueNK + thueTTDB + thueVAT
+    giaban = gianhapCang * 1.05 'chi phi, lai...
+    gialanbanh = giaban * 1.15 'phi truoc ba, baohiem
+    MsgBox "Gia lan banh: " & Format(gialanbanh * 23000, "#,##0") & _
+    vbNewLine & "Gia goc: " & Format(gianhap * 23000, "#,##0"), vbInformation, "Bot"
+End Sub
