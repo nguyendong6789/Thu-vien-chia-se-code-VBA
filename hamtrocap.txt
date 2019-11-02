@@ -1,0 +1,14 @@
+Function TroCap(nam)
+    nam = Val(nam)
+    If nam >= 1 And nam <= 5 Then
+        TroCap = 1000000
+    ElseIf nam >= 6 And nam <= 10 Then
+        TroCap = 2000000
+    ElseIf nam >= 11 And nam <= 15 Then
+        TroCap = 3000000
+    ElseIf nam >= 16 Then
+        TroCap = 4000000
+    Else
+        TroCap = "Chi duoc nhap so duong"
+    End If
+End Function
