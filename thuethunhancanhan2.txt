@@ -1,0 +1,20 @@
+Function ThueTNCN(Luong, SoNguoi)
+    x = Luong - 9000000 - SoNguoi * 3600000
+    If x <= 0 Then
+        ThueTNCN = 0
+    ElseIf x > 0 And x <= 5000000 Then
+        ThueTNCN = x * 0.05
+    ElseIf x > 5000000 And x <= 10000000 Then
+        ThueTNCN = 250000 + (x - 5000000) * 0.1
+    ElseIf x > 10000000 And x <= 18000000 Then
+        ThueTNCN = 750000 + (x - 10000000) * 0.15
+    ElseIf x > 18000000 And x <= 32000000 Then
+        ThueTNCN = 1950000 + (x - 18000000) * 0.2
+    ElseIf x > 32000000 And x <= 52000000 Then
+        ThueTNCN = 4750000 + (x - 32000000) * 0.25
+    ElseIf x > 52000000 And x <= 80000000 Then
+        ThueTNCN = 9750000 + (x - 52000000) * 0.3
+    Else
+        ThueTNCN = 18150000 + (x - 80000000) * 0.35
+    End If
+End Function
