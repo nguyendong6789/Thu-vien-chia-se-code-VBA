@@ -1,0 +1,10 @@
+Function TroCap2(nam)
+    nam = Val(nam)
+    Select Case nam
+        Case 1 To 5: TroCap2 = 1000000
+        Case 6 To 10: TroCap2 = 2000000
+        Case 11 To 15: TroCap2 = 3000000
+        Case Is >= 16: TroCap2 = 4000000
+        Case Else: TroCap2 = "Chi nhap so duong"
+    End Select
+End Function
