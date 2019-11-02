@@ -1,0 +1,28 @@
+Function TienThuong(ds, cn)
+    Select Case ds
+        Case 10 To 20
+            Select Case cn
+                Case Is = 1: TienThuong = 1000000
+                Case Is = 2: TienThuong = 1500000
+                Case Is = 3: TienThuong = 2000000
+            End Select
+        Case 21 To 30
+            Select Case cn
+                Case Is = 1: TienThuong = 2000000
+                Case Is = 2: TienThuong = 2500000
+                Case Is = 3: TienThuong = 3000000
+            End Select
+        Case 31 To 40
+            Select Case cn
+                Case Is = 1: TienThuong = 3000000
+                Case Is = 2: TienThuong = 3500000
+                Case Is = 3: TienThuong = 4000000
+            End Select
+        Case Is >= 41
+            Select Case cn
+                Case Is = 1: TienThuong = 4000000
+                Case Is = 2: TienThuong = 4500000
+                Case Is = 3: TienThuong = 5000000
+            End Select
+    End Select
+End Function
