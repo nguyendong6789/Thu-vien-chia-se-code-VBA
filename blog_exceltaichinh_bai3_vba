@@ -1,0 +1,3 @@
+Sub XinChao()
+    MsgBox "Chao ban den voi Excel VBA!", vbInformation, "Hello"
+End Sub
